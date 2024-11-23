@@ -69,9 +69,7 @@ function CategoryProducts() {
         <div className="d-flex justify-content-between mb-3">
           <div className="text-start border-0 rounded-0 border-start border-primary border-5 h-100">
             <div className="ms-2">
-              <h3 className="mb-0 h3 fw-bold text-uppercase text-primary-emphasis">
-                Danh mục: {category.name}
-              </h3>
+              <h3 className="mb-0 h3 fw-bold text-uppercase text-primary-emphasis">Danh mục: {category.name}</h3>
             </div>
           </div>
           {/* Bộ lọc sản phẩm */}
