@@ -18,9 +18,17 @@ export default function CardService({ name, slug, price, compare_price, discount
               </p>
             </div>
           )}
-          <div className="d-flex justify-content-center align-items-center" style={{ width: "300px", height: "280px", overflow: "hidden" }}>
+          <div
+            className="d-flex justify-content-center align-items-center"
+            style={{
+              width: "100%",
+              minHeight: "20vh", // Đảm bảo chiều cao linh hoạt theo thiết bị
+              overflow: "hidden",
+              // padding: "10px", // Thêm khoảng cách cho nội dung trên màn hình nhỏ
+            }}
+          >
             <Link to={`/dich-vu/${slug}`}>
-              <Image src={import.meta.env.VITE_URL + image} className="card-img-top w-100" fluid alt={name} style={{ objectFit: "cover" }} />
+              <Image src={import.meta.env.VITE_URL + image} className="card-img-top w-100 " fluid alt={name} style={{ objectFit: "cover" }} />
             </Link>
           </div>
         </div>

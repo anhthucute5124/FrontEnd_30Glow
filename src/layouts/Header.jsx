@@ -12,7 +12,7 @@ function Header() {
   const location = useLocation();
   const [categories, setCategories] = useState([]);
   const [groupedCategories, setGroupedCategories] = useState({});
-  const [services, setServices] = useState([]);
+  const services = useSelector((state) => state.serviceCart.items);
   const [collections, setCollections] = useState([]);
   const [groupedServices, setGroupedServices] = useState({});
   const { user, logout, cartItems } = useAuthenContext();
@@ -63,7 +63,7 @@ function Header() {
     }, {});
     setGroupedCategories(grouped);
 
-    // Group Services by Collection
+  
     if (collections.length > 0 && services.length > 0) {
       const groupedServices = services.reduce((acc, service) => {
         const collectionId = service.id_collection;
