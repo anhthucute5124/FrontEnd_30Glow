@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Table, Form } from "react-bootstrap";
 import Header from "../../layouts/Header";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../layouts/Footer";
 import { Helmet } from "react-helmet";
 import { Notyf } from "notyf";
@@ -43,9 +43,7 @@ function ServiceCart() {
     notyf.success("Đã xóa tất cả dịch vụ!");
   };
 
-
-  useEffect(() => {
-  }, [services]);
+  useEffect(() => {}, [services]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -157,10 +155,12 @@ function ServiceCart() {
                   ))}
                 </tbody>
                 <div>
-                  <h4 className="mb-2" style={{ textAlign: "center" }}>
+                  <h5 className="mb-2" style={{ textAlign: "center" }}>
                     <i className="bi bi-calendar-heart , fs-1"></i> <hr></hr>
-                    <strong style={{ color: "red" }}> Bạn chưa có lịch đặt nào </strong>
-                  </h4>
+                    <strong style={{ color: "red" }}>
+                      Bạn chưa có lịch đặt nào. <Link to="/san-pham">Đặt lịch ngay!!</Link>
+                    </strong>
+                  </h5>
                 </div>
               </Table>
             </Col>
@@ -258,17 +258,22 @@ function ServiceCart() {
                   ))}
                 </tbody>
               </Table>
-              <div className="text-end">
-                <Button variant="outline-danger" onClick={handleClearServices} className="mb-2">
-                  <i class="bi bi-cart-x">
-                    <span> Xóa tất cả</span>{" "}
+              <div className="d-flex justify-content-between">
+                <Button variant="outline-secondary" onClick={chuyenTrang} className="text-decoration-none text-body-emphasis">
+                  <i class="bi bi-arrow-right ms-2">
+                    <span> Tiếp tục mua hàng </span>{" "}
                   </i>
                 </Button>
+
+                <Button variant="outline-danger" onClick={handleClearServices} className="mb-2">
+                  <span> Xóa tất cả</span> <i class="bi bi-cart-x"></i>
+                </Button>
               </div>
-              <h4>
+
+              {/* <h4>
                 <strong style={{ color: "red" }}> Khi đặt lịch trước</strong> bạn sẽ được tặng
                 <span style={{ color: "green" }}> xịt dưỡng tóc Loreal</span>
-              </h4>
+              </h4> */}
             </Col>
             <Col md={5}>
               <div className="border" style={{ padding: "20px", borderRadius: "5px", width: "100%" }}>
