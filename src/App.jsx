@@ -31,6 +31,7 @@ import Order from "./pages/Profile/Order";
 import ProductDetail from "./pages/Product/ProductDetail";
 import ShoppingCart from "./pages/Cart/ShoppingCart";
 import CollectionServices from "./pages/Service/CollectionService";
+import Post from "./pages/Post/Post";
 
 function App() {
   const { user } = useContext(AuthenContext);
@@ -47,6 +48,7 @@ function App() {
       <Route path="/dich-vu" element={<Service />} />
       <Route path="/dich-vu/:slug" element={<Show />} />
       <Route path="/nhom-dich-vu/:slug" element={<CollectionServices />} />
+      <Route path="/tin-tuc" element={<Post />} />
 
       <Route path="/thanh-toan" element={<ThanhToan />} />
       {!user ? (
